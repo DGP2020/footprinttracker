@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- SEO -->
+  <title>EcoStep — Kerala Carbon Footprint Tracker</title>
+  <meta name="description" content="Track, understand, and reduce your daily carbon footprint across Kerala's 14 districts. Localized insights for transport, diet, and energy usage.">
+  <meta name="keywords" content="carbon footprint, Kerala, sustainability, CO2 tracker, climate, eco-friendly, green living">
+  <meta name="author" content="EcoStep Team">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="EcoStep — Kerala Carbon Footprint Tracker">
+  <meta property="og:description" content="Track and reduce your carbon footprint with localized Kerala insights.">
+  <meta property="og:type" content="website">
+
+  <!-- PWA -->
+  <link rel="manifest" href="./manifest.json">
+  <meta name="theme-color" content="#0B3D2E">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="EcoStep">
+
+  <!-- Security -->
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; img-src 'self' data: blob:; connect-src 'self';">
+
+  <!-- Favicon (inline SVG) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <!--
+    EcoStep — Kerala Carbon Footprint Tracker
+    A lightweight, zero-dependency web app for tracking
+    and reducing personal carbon emissions across Kerala.
+    Built with vanilla HTML, CSS, and JavaScript.
+  -->
+
+  <!-- App Mount Point -->
+  <div id="app" role="application" aria-label="EcoStep Carbon Footprint Tracker">
+    <!-- Initial loading state (replaced by JS) -->
+    <div class="auth-screen">
+      <div style="text-align:center">
+        <span style="font-size:3rem;display:block;margin-bottom:1rem;animation:floatPulse 2s ease-in-out infinite">🌿</span>
+        <p style="color:var(--text-secondary);font-family:var(--font-family)">Loading EcoStep...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" aria-live="polite" aria-relevant="additions"></div>
+
+  <!--
+    Script loading order matters:
+    1. data.js      — Constants (no dependencies)
+    2. a11y.js      — Accessibility (no dependencies)
+    3. storage.js   — Storage layer (depends on data.js)
+    4. auth.js      — Auth (depends on storage.js, data.js)
+    5. export.js    — Export (depends on storage.js, a11y.js, auth.js)
+    6. tracker.js   — Tracker UI (depends on data.js, storage.js, a11y.js, auth.js)
+    7. insights.js  — Insights (depends on data.js, storage.js, a11y.js)
+    8. charts.js    — Charts (depends on a11y.js)
+    9. tests.js     — Test suite (depends on all modules)
+    10. app.js      — Main controller (depends on all modules, loads last)
+  -->
+  <script src="./js/data.js"></script>
+  <script src="./js/a11y.js"></script>
+  <script src="./js/storage.js"></script>
+  <script src="./js/auth.js"></script>
+  <script src="./js/export.js"></script>
+  <script src="./js/tracker.js"></script>
+  <script src="./js/insights.js"></script>
+  <script src="./js/charts.js"></script>
+  <script src="./js/tests.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>
